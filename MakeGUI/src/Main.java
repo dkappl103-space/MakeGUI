@@ -4,8 +4,11 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Making a GUI");
+        //Makes a new Jframe called window to make a GUI to mess with
         JFrame window = new JFrame("Making GUI");
+        //Sets the window size
         window.setSize(500, 500);
+        //Makes it close when you close the window
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         //New panel called control
@@ -23,11 +26,12 @@ public class Main {
                 control.revalidate();
                 control.repaint();
             });
-
+            //Adds a button to the screen
             control.add(button);
         }
-
+        //Makes a panel called control inside the window
         window.add(control);
+        //Makes the window visible, so you can actually mess with it
         window.setVisible(true);
     }
 }
