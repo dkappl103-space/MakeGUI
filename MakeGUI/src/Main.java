@@ -1,27 +1,32 @@
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Making a GUI");
         JFrame window = new JFrame("Making GUI");
-        window.setVisible(true);
         window.setSize(500, 500);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-
         JPanel control = new JPanel();
-        JButton button = new JButton("Button 1");
-        JButton newButton = new JButton("Button 2");
-        control.add(button);
+        control.setLayout(new GridLayout(10, 10)); // Set layout on the panel
+        control.setPreferredSize(new Dimension(400, 400));
+
+        // Create and add 30 buttons, each with its own listener
+        for (int i = 1; i <= 30; i++) {
+            JButton button = new JButton("Button " + i);
+
+            // Add action listener to remove the button when clicked
+            button.addActionListener(e -> {
+                control.remove(button);
+                control.revalidate();
+                control.repaint();
+            });
+
+            control.add(button); // Add button to the panel
+        }
+
         window.add(control);
-        button.addActionListener(e -> {
-            System.out.println("Did you push the button?");
-            JPanel panel = new JPanel();
-            panel.setLayout(BoxLayout.Y_AXIS);
-        });
-
+        window.setVisible(true);
     }
-
 }
