@@ -8,22 +8,23 @@ public class Main {
         window.setSize(500, 500);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        //New panel called control
         JPanel control = new JPanel();
-        control.setLayout(new GridLayout(10, 10)); // Set layout on the panel
+        //Changes the layout to a grid layout (With 10 rows and 10 columns)
+        control.setLayout(new GridLayout(10, 10));
         control.setPreferredSize(new Dimension(400, 400));
 
-        // Create and add 30 buttons, each with its own listener
+        //Add 30 buttons to press :)
         for (int i = 1; i <= 30; i++) {
             JButton button = new JButton("Button " + i);
-
-            // Add action listener to remove the button when clicked
+            //Action thingy
             button.addActionListener(e -> {
                 control.remove(button);
                 control.revalidate();
                 control.repaint();
             });
 
-            control.add(button); // Add button to the panel
+            control.add(button);
         }
 
         window.add(control);
