@@ -14,7 +14,13 @@ public class Main {
         //New panel called control
         JPanel control = new JPanel();
         //Changes the layout to a grid layout (With 10 rows and 10 columns)
-        control.setLayout(new GridLayout(10, 10));
+//        control.setLayout(new GridLayout(10, 3));
+        //Have to call null on the parent of where the buttons/panels will be going
+        window.setLayout(null);
+        //Maximum place the panel (control) will take up
+        control.setBounds(0, 0, 500, 500);
+
+        //Sets the panels preferred size
         control.setPreferredSize(new Dimension(400, 400));
 
         //Add 30 buttons to press :)
@@ -26,6 +32,8 @@ public class Main {
                 control.revalidate();
                 control.repaint();
             });
+            //Sets the button size (150 wide by 30 high)
+            button.setPreferredSize(new Dimension(150,30));
             //Adds a button to the screen
             control.add(button);
         }
