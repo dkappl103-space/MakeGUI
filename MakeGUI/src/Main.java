@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-
+//Let me document my current plans for this, first I want to generate a lot of buttons that take up the screen
+//Then I need to make all but 1 button invisible, after you click it, it will be removed, and a new one will appear
+//This will be random hopefully, to make it different everytime you play the window.
 public class Main {
     public static void main(String[] args) {
         System.out.println("Making a GUI");
